@@ -6,10 +6,10 @@
 enum ResourceType
 {
 	RES_TYPE_NONE = 0,
-	RES_TYPE_EXISTS,    // to comparison with the specified hash value
-	RES_TYPE_MISSING,   // check it missing file on client
-	RES_TYPE_IGNORE,    // ignore the specified hash value
-	RES_TYPE_HASH_ANY,  // any file with any the hash value
+	RES_TYPE_EXISTS,    // сравнение с указанным значением хэша
+	RES_TYPE_MISSING,   // проверить отсутствие файла на клиенте
+	RES_TYPE_IGNORE,    // игнорировать указанное значение хэша
+	RES_TYPE_HASH_ANY,  // любой файл с любым значением хэша
 };
 
 enum ReCheckerFunc
@@ -36,23 +36,23 @@ enum ReCheckerFunc
 };
 
 /*
-* Send request the file for the client to get hash
+* Отправить запрос файла на клиенте, чтобы получить хэш
 *
-* @param file           The file (Can contain a relative path to the file)
-* @param function       The forward to call
-* @param type           The request type, can be only RES_TYPE_EXISTS, RES_TYPE_MISSING or RES_TYPE_HASH_ANY
-* @param hash           Hash of file to request.
+* @param file           Файл (может содержать относительный путь к файлу)
+* @param function       Форвард, который вызывается
+* @param type           Тип запроса может быть только RES_TYPE_EXISTS, RES_TYPE_MISSING или RES_TYPE_HASH_ANY
+* @param hash           Хэш файла для запроса.
 *
-* @return               Returns a hook handle. Use UnRegisterQueryFile to remove the forward
+* @return               Возвращает хэндл хука. Используйте UnRegisterQueryFile для удаления форварда
 */
 native QueryFileHook:RegisterQueryFile(const file[], const function[], const ResourceType:type, const hash = -1);
 
 /*
-* Unregister the forward.
-* Use the return value from RegisterQueryFile as the parameter here!
+* Удаление регистрации форварда.
+* Используйте возвращаемое значение RegisterQueryFile в качестве параметра здесь!
 *
-* @param hook           The hook to remove
+* @param hook           Хук для удаления
 *
-* @return               Returns true if the hook is successfully removed, otherwise false
+* @return               Возвращает true, если хук успешно удален, иначе false
 */
 native bool:UnRegisterQueryFile(QueryFileHook:hook);
