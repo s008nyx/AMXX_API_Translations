@@ -7,94 +7,94 @@
 #include <reapi_gamedll_const>
 
 /*
-* Sets Think callback for entity
+* Устанавливает обратный вызов Think для объекта
 *
-* @param entity     Entity index
-* @param callback   The forward to call
-* @param params     Optional set of data to pass through to callback
-* @param len        Optional size of data
+* @param entity     Индекс объекта
+* @param callback   Функция для обратного вызова
+* @param params     Дополнительный набор данных для передачи обратного вызова
+* @param len        Необязательный размер данных
 *
-* @note Use "" to reset callback
-* @note Callback should be contains passing arguments as "public Think_Callback(const ent)"
+* @note Используйте "" для сброса обратного вызова
+* @note Обратный вызов должен содержать передающие аргументы как "public Think_Callback(const ent)"
 *
 * @noreturn
 */
 native SetThink(const ent, const callback[], const params[] = "", const len = 0);
 
 /*
-* Sets Touch callback for entity
+* Устанавливает обратный вызов Touch для объекта
 *
-* @param entity     Entity index
-* @param callback   The forward to call
-* @param params     Optional set of data to pass through to callback
-* @param len        Optional size of data
+* @param entity     Индекс объекта
+* @param callback   Функция для обратного вызова
+* @param params     Дополнительный набор данных для передачи обратного вызова
+* @param len        Необязательный размер данных
 *
-* @note Use "" to reset callback
-* @note Callback should be contains passing arguments as "public Touch_Callback(const ent, const other)"
+* @note Используйте "" для сброса обратного вызова
+* @note Обратный вызов должен содержать передающие аргументы как "public Touch_Callback(const ent, const other)"
 *
 * @noreturn
 */
 native SetTouch(const ent, const callback[], const params[] = "", const len = 0);
 
 /*
-* Sets Use callback for entity
+* Устанавливает обратный вызов Use для объекта
 *
-* @param entity     Entity index
-* @param callback   The forward to call
-* @param params     Optional set of data to pass through to callback
-* @param len        Optional size of data
+* @param entity     Индекс объекта
+* @param callback   Функция для обратного вызова
+* @param params     Дополнительный набор данных для передачи обратного вызова
+* @param len        Необязательный размер данных
 *
-* @note Use "" to reset callback
-* @note Callback should be contains passing arguments as "public Use_Callback(const ent, const activator, const caller, USE_TYPE:useType, Float:value)"
+* @note Используйте "" для сброса обратного вызова
+* @note Обратный вызов должен содержать передающие аргументы как "public Use_Callback(const ent, const activator, const caller, USE_TYPE:useType, Float:value)"
 *
 * @noreturn
 */
 native SetUse(const ent, const callback[], const params[] = "", const len = 0);
 
 /*
-* Sets Blocked callback for entity
+* Устанавливает обратный вызов Blocked для объекта
 *
-* @param entity     Entity index
-* @param callback   The forward to call
-* @param params     Optional set of data to pass through to callback
-* @param len        Optional size of data
+* @param entity     Индекс объекта
+* @param callback   Функция для обратного вызова
+* @param params     Дополнительный набор данных для передачи обратного вызова
+* @param len        Необязательный размер данных
 *
-* @note Use "" to reset callback
-* @note Callback should be contains passing arguments as "public Blocked_Callback(const ent, const other)"
+* @note Используйте "" для сброса обратного вызова
+* @note Обратный вызов должен содержать передающие аргументы как "public Blocked_Callback(const ent, const other)"
 *
 * @noreturn
 */
 native SetBlocked(const ent, const callback[], const params[] = "", const len = 0);
 
 /*
-* Sets MoveDone callback for entity
+* Устанавливает обратный вызов MoveDown для объекта
 *
-* @param entity     Entity index
-* @param callback   The forward to call
-* @param params     Optional set of data to pass through to callback
-* @param len        Optional size of data
+* @param entity     Индекс объекта
+* @param callback   Функция для обратного вызова
+* @param params     Дополнительный набор данных для передачи обратного вызова
+* @param len        Необязательный размер данных
 *
-* @note Use "" to reset callback
-* @note Entity should be inherited from CBaseToggle, otherwise server can crash
-* @note Callback should be contains passing arguments as "public MoveDone_Callback(const ent)"
+* @note Используйте "" для сброса обратного вызова
+* @note Объект должен быть унаследован от CBaseToggle, иначе возможно падение сервера
+* @note Обратный вызов должен содержать передающие аргументы как "public MoveDone_Callback(const ent)"
 *
 * @noreturn
 */
 native SetMoveDone(const ent, const callback[], const params[] = "", const len = 0);
 
 /*
-* Sets a value to CSGameRules_Members members.
+* Устанавливает значение для CSGameRules_Members элемента.
 *
-* @param member     The specified member, look at the enums with name CSGameRules_Members
+* @param member     Специальный элемент, список смотрите в константах CSGameRules_Members
 *
-* @return           1 on success.
+* @return           1 при успехе.
 */
 native set_member_game(CSGameRules_Members:member, any:...);
 
 /*
-* Returns a value from CSGameRules_Members members
+* Возвращает значение CSGameRules_Members элемента
 *
-* @param member     The specified member, look at the enums with name CSGameRules_Members
+* @param member     Специальный элемент, список смотрите в константах CSGameRules_Members
 *
 * @return           If an integer or boolean or one byte, array or everything else is passed via the 3rd argument and more, look at the argument list for the specified member
 */
@@ -103,10 +103,10 @@ native any:get_member_game(CSGameRules_Members:member, any:...);
 /*
 * Sets a value to an entity's member.
 *
-* @param index      Entity index
-* @param member     The specified member, look at the enums with name *_Members
+* @param index      Индекс объекта
+* @param member     Специальный элемент, список смотрите в константах *_Members
 *
-* @return           1 on success.
+* @return           1 при успехе.
 */
 native set_member(const index, any:member, any:...);
 
