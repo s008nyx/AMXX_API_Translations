@@ -4,48 +4,48 @@
 #define _reapi_vtc_included
 
 /*
-* Checks whether the player is talking at the moment.
+* Проверяет, разговаривает ли игрок в данный момент-
 *
-* @param index      Client index
+* @param index      Индекс игрока
 *
-* @return           true if client is speaking, false otherwise
+* @return           true если игрок говорит, в противном случае false
 */
 native bool:VTC_IsClientSpeaking(const index);
 
 /*
-* Mutes the player.
+* Блокирует микрофон игрока.
 *
-* @param index      Client index
+* @param index      Индекс игрока
 *
 * @noreturn
 */
 native VTC_MuteClient(const index);
 
 /*
-* Unmutes the player.
+* Снимает блокировку с микрофона игрока.
 *
-* @param index      Client index
+* @param index      Индекс игрока
 *
 * @noreturn
 */
 native VTC_UnmuteClient(const index);
 
 /*
-* Checks whether the player is muted at the moment.
+* Проверяет, заблокирован ли микрофон у игрока в данный момент
 *
-* @param index      Client index
+* @param index      Индекс игрока
 *
-* @return           true if client is muted, false otherwise
+* @return           true если микрофон заблокирован, в противном случае false
 */
 native bool:VTC_IsClientMuted(const index);
 
 /*
-* Play the audio file via the voice stream.
+* Воспроизведение аудио файла через голосовой канал.
 *
-* @param receiver       Receiver index
-* @param soundFilePath  The path to the sound file
+* @param receiver       Индекс получателя
+* @param soundFilePath  Путь до аудио файла
 *
-* @note Usage example:
+* @note Пример использования:
 *       VTC_PlaySound(id, "sound/ambience/Opera.wav");
 *
 * @noreturn
@@ -53,18 +53,18 @@ native bool:VTC_IsClientMuted(const index);
 native VTC_PlaySound(const receiver, const soundFilePath[]);
 
 /*
-* Called when the player started talking.
+* Вызывается, когда игрок начал говорить.
 *
-* @param index      Client index
+* @param index      Индекс игрока
 *
 * @noreturn
 */
 forward VTC_OnClientStartSpeak(const index);
 
 /*
-* Called when the player stopped talking.
+* Вызывается, когда игрок закончил говорить.
 *
-* @param index      Client index
+* @param index      Индекс игрока
 *
 * @noreturn
 */
