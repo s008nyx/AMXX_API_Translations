@@ -22,27 +22,27 @@ enum client_auth_type
 #define is_user_steam(%0) (REU_GetAuthtype(%0) == CA_TYPE_STEAM)
 
 /*
-* Gets client protocol.
+* Получает протокол игрока
 *
-* @param index  Client index
+* @param index  Индекс игрока
 *
-* @return       Client protocol
+* @return       Протокол игрока
 */
 native REU_GetProtocol(const index);
 
 /*
-* Gets client auth type.
+* Получает тип аутентификации игрока.
 *
-* @param index  Client index
+* @param index  Индекс игрока
 *
-* @return       Client auth type
+* @return       Тип аутентификации игрока
 */
 native client_auth_type:REU_GetAuthtype(const index);
 
 /*
-* Check if the client is running RevEmu with limited user rights.
+* Проверяет, запущен ли RevEmu у игрока без прав администратора
 *
-* @param index  Client index
+* @param index  Индекс игрока
 *
 * @return       1/0
 */
