@@ -101,7 +101,7 @@ native set_member_game(CSGameRules_Members:member, any:...);
 native any:get_member_game(CSGameRules_Members:member, any:...);
 
 /*
-* Sets a value to an entity's member.
+* Устанавливает значение для свойств объекта.
 *
 * @param index      Индекс объекта
 * @param member     Специальный элемент, список смотрите в константах *_Members
@@ -111,10 +111,10 @@ native any:get_member_game(CSGameRules_Members:member, any:...);
 native set_member(const index, any:member, any:...);
 
 /*
-* Returns a value from an entity's member.
+* Возвращает значение для свойства объекта.
 *
-* @param index      Entity index
-* @param member     The specified member, look at the enums with name *_Members
+* @param index      Индекс объекта
+* @param member     Специальный элемент, список смотрите в константах *_Members
 *
 * @return           If an integer or boolean or one byte, array or everything else is passed via the 3rd argument and more, look at the argument list for the specified member
 */
@@ -203,10 +203,10 @@ native get_rebuy(const RebuyHandle:rebuyhandle, RebuyStruct:member);
 native rg_set_animation(const index, PLAYER_ANIM:playerAnim);
 
 /*
-* Adds money to player's account.
+* Добавляет деньги на счет игрока.
 *
-* @param index          Client index
-* @param amount         The amount of money
+* @param index          Индекс игрока
+* @param amount         Сумма денег
 * @param bTrackChange   If bTrackChange is 1, the amount of money added will also be displayed.
 *
 * @noreturn
@@ -214,13 +214,13 @@ native rg_set_animation(const index, PLAYER_ANIM:playerAnim);
 native rg_add_account(const index, amount, AccountSet:typeSet = AS_ADD, const bool:bTrackChange = true);
 
 /*
-* Gives the player an item.
+* Выдает игроку предмет.
 *
-* @param index      Client index
-* @param pszName    Item classname
-* @param type       Look at the enums with name GiveType
+* @param index      Индекс игрока
+* @param pszName    Classname предмета
+* @param type       Способ выдачи (Подробнее смотрите enum GiveType)
 *
-* @return           Index of entity if successfull, -1 otherwise
+* @return           Индекс созданного объекта при удаче, в другом случае -1
 */
 native rg_give_item(const index, const pszName[], GiveType:type = GT_APPEND);
 
@@ -240,19 +240,19 @@ native rg_give_item(const index, const pszName[], GiveType:type = GT_APPEND);
 native rg_give_custom_item(const index, const pszName[], GiveType:type = GT_APPEND, const uid = 0);
 
 /*
-* Give the default items to a player.
+* Выдает стандратные предметы игроку.
 *
-* @param index      Client index
+* @param index      Индекс игрока
 *
 * @noreturn
 */
 native rg_give_default_items(const index);
 
 /*
-* Gives the player a shield
+* Выдает игроку щит
 *
-* @param index          Client index
-* @param bDeploy        To deploy the shield
+* @param index          Индекс игрока
+* @param bDeploy        Надеть щит при выдаче, если true
 *
 * @noreturn
 */
